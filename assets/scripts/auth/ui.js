@@ -1,3 +1,4 @@
+'use strict'
 
 const store = require('./../store')
 
@@ -27,9 +28,21 @@ const onSignInFailure = function (error) {
   $('#message').text('Sign in failed. Try again!')
 }
 
+const onChangePasswordSuccess = function () {
+  $('#message').text('Thanks for changing your password!')
+  $('#change-password-form').trigger('reset')
+}
+
+const onChangePasswordFailure = function (error) {
+  console.log('error is', error)
+  $('#message').text('Change password failed. Try again!')
+}
+
 module.exports = {
   onSignUpSuccess: onSignUpSuccess,
   onSignUpFailure: onSignUpFailure,
   onSignInSuccess: onSignInSuccess,
-  onSignInFailure: onSignInFailure
+  onSignInFailure: onSignInFailure,
+  onChangePasswordSuccess: onChangePasswordSuccess,
+  onChangePasswordFailure: onChangePasswordFailure
 }

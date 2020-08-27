@@ -12,6 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+
       <p id="message"></p>
     <section>
       <form id="sign-up-form">
@@ -32,6 +34,8 @@
       </form>
     </section>
 
+
+
     <section>
       <form id="sign-in-form">
         <fieldset>
@@ -47,6 +51,31 @@
         </fieldset>
       </form>
     </section>
+
+
+    <section>
+    <form id="change-password-form">
+      <fieldset>
+        <legend>Change Password!</legend>
+
+      <label for="old-password">Old Password</label>
+      <input id="old-password" name="passwords[old]" type="password" placeholder="Old Password">
+
+      <label for="new-password">New Password</label>
+      <input id="new-password" name="passwords[new]" type="password" placeholder="New Password">
+
+
+      <input type="submit" value="Change Password">
+    </fieldset>
+    </form>
+  </section>
+
+
+  <section>
+
+    <input id="sign-out-input" type="submit" value="Sign Out">
+
+</section>
 
 
     </body>
