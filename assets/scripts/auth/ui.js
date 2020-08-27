@@ -38,11 +38,23 @@ const onChangePasswordFailure = function (error) {
   $('#message').text('Change password failed. Try again!')
 }
 
+const onSignOutSuccess = function () {
+  $('#message').text('Thanks for signing out!')
+  $('#change-password-form').trigger('reset')
+}
+
+const onSignOutFailure = function (error) {
+  console.log('error is', error)
+  $('#message').text('Sign out failed. Try again!')
+}
+
 module.exports = {
   onSignUpSuccess: onSignUpSuccess,
   onSignUpFailure: onSignUpFailure,
   onSignInSuccess: onSignInSuccess,
   onSignInFailure: onSignInFailure,
   onChangePasswordSuccess: onChangePasswordSuccess,
-  onChangePasswordFailure: onChangePasswordFailure
+  onChangePasswordFailure: onChangePasswordFailure,
+  onSignOutSuccess: onSignOutSuccess,
+  onSignOutFailure: onSignOutFailure
 }
