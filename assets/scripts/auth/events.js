@@ -53,9 +53,25 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+
+  api.newGame()
+
+    .then(ui.onNewGameSuccess)
+
+    .catch(ui.onNewGameFailure)
+}
+
+const clickFeature = function () {
+  $('#message').text('You have successfuly clicked!')
+}
+
 module.exports = {
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
-  onSignOut: onSignOut
+  onSignOut: onSignOut,
+  onNewGame: onNewGame,
+  clickFeature: clickFeature
 }

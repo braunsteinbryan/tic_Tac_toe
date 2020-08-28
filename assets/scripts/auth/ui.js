@@ -48,6 +48,16 @@ const onSignOutFailure = function (error) {
   $('#message').text('Sign out failed. Try again!')
 }
 
+const onNewGameSuccess = function () {
+  $('#message').text('You have successfuly started a new game!')
+  $('#change-password-form').trigger('reset')
+}
+
+const onNewGameFailure = function (error) {
+  console.log('error is', error)
+  $('#message').text('Game not started. Try again!')
+}
+
 module.exports = {
   onSignUpSuccess: onSignUpSuccess,
   onSignUpFailure: onSignUpFailure,
@@ -56,5 +66,7 @@ module.exports = {
   onChangePasswordSuccess: onChangePasswordSuccess,
   onChangePasswordFailure: onChangePasswordFailure,
   onSignOutSuccess: onSignOutSuccess,
-  onSignOutFailure: onSignOutFailure
+  onSignOutFailure: onSignOutFailure,
+  onNewGameSuccess: onNewGameSuccess,
+  onNewGameFailure: onNewGameFailure
 }

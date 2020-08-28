@@ -1,1 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+div .board {
+  height: 100px;
+  outline: 1px solid;
+  width: 100px;
+}
