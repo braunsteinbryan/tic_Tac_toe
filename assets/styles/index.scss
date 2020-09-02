@@ -1,14 +1,90 @@
 @import '~bootstrap/scss/bootstrap';
 
-
-div {
+.container {
+  // Set the board container to take up 100% of the viewport's height
+  // in this case that's the height of the browser
   display: flex;
   align-content: center;
   justify-content: center;
+  height: 100vh;
 }
 
-div .board {
-  height: 100px;
-  outline: 1px solid;
-  width: 100px;
+.board {
+  // set the max height and the min width of thte board
+  // 100vh - 100% of the viewport height
+  // use a method called `calc` to subtract some space around
+  // each side
+  max-height: calc(100vh - 100px);
+  min-width: calc(100vh - 100px);
+
+  // Setting margin to auto will make the left/right margins the same size
+  // which effectively centers the element.
+  margin: auto;
+
+  // Add cat background to board:
+  // background: url('public/cat.jpg') no-repeat center center;
+  // background-size: cover;
+}
+
+.box {
+  background: white;
+  // set the minimum height for each box to be a third of the parent's width
+  // (board's height)
+  // The calc method will take 100% of the parent's height and divide it by 3
+  min-height: calc(100% / 3);
+
+  // Set each box to have `display` be `flex` so we can center the content
+  // (x's and o's) inside of the boxes
+  display: flex;
+
+  // Center the content along the main-axis (left-to-right because flex-direction defaults to `row`)
+  justify-content: center;
+
+  // Center the content along the cross-axis (top-to-bottom because the cross-axis is perpendicular to the main-axis)
+  align-content: center;
+
+  // Use `vh` to have the font size change as the viewport height changes as well
+  font-size: 15vh;
+
+  // Add a shadow to the x's and o's
+  // Place the shadow 2px to the right & 2px below the text
+  // Set the shadow color to be black & have 25% opacity
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+
+  // Prevent the user from being able to select the x or o text
+  user-select: none;
+
+  // we want to have boarders on the right of each box and the bottom of each box
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+
+  // & in sass indicates a nested style. This would be the same as doing
+  // .box:nth-child(3n) in it's own separate block.
+  //
+  // Select the 3 right boxes using `:nth-child` - this will select elements
+  // based on their position to their siblings
+  // Pass `:nth-child()` the value `3n` which will select every 3rd box
+  // 3rd box, then 6th box, then the 9th box
+  &:nth-child(3n) {
+    border-right: 0px;
+  }
+
+  // Select the bottom boxes using `:nth-last-child` which selects elements
+  // based on their position **counting from the end**
+  // `-1 + 3` represent the last three elements among a group of siblings
+
+  // Break this down:
+  // when n is 0: (-1 * 0) + 3 = 3rd // third from last box
+  // when n is 1: (-1 * 1) + 2 = 2nd // second to last box
+  // when n is 2: (-1 * 2) + 1 = 1st // first to last (or just last) box
+  // Then we stop because there are no more elements
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0px;
+  }
+
+  // Add some color when we hover on a box:
+  &:hover {
+    background-color: LightSteelBlue;
+    cursor: pointer;
+  }
 }

@@ -1,5 +1,6 @@
 'use strict'
 
+const authEvents = require('./events')
 const config = require('./../config')
 const store = require('./../store')
 
@@ -51,10 +52,33 @@ const newGame = function (data) {
   })
 }
 
+const updateGame = function (gameObject) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: gameObject
+  })
+}
+
+const gameHistory = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword: changePassword,
   signOut: signOut,
-  newGame: newGame
+  newGame: newGame,
+  updateGame: updateGame,
+  gameHistory: gameHistory
 }
