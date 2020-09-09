@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>B'S TIC TAC TOE</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,7 +13,7 @@
     </head>
     <body>
 
-
+      <h1 id="welcome-message">To play Tic Tac Toe, Please sign up or sign in!</h1>
       <p id="message"></p>
     <section>
       <form id="sign-up-form">
@@ -52,6 +52,9 @@
       </form>
     </section>
 
+    <section>
+      <button id="new-game" type="button">New Game!</button>
+   </section>
 
     <section>
     <form id="change-password-form">
@@ -77,12 +80,11 @@
 
 </section>
 
- <section>
-   <button id="new-game" type="button">New Game!</button>
-</section>
 
-<p id="message1"></p>
-  <h2>Tic Tac Toe</h2>
+<section id="game-details">
+<h3 id="message1"></h3>
+<h3 id="invalid-message"></h3>
+  <h2></h2>
   <div class="container">
     <div class="row board h-100">
       <div class="row">
@@ -98,6 +100,8 @@
   </div>
 </div>
 </div>
+</section>
+<h5 id="get-games-message"></h5>
 <button id="get-games" type="button">View Played Games</button>
     </body>
 </html>

@@ -5,6 +5,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 let currentPlayer = 'X'
+let opposingPlayer = 'O'
 let activeGame = true
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 let currentGameOver = false
@@ -78,6 +79,7 @@ const onNewGame = function (event) {
     .then(ui.onNewGameSuccess)
 
     .catch(ui.onNewGameFailure)
+  onLoad()
 }
 
 const onGetGames = function () {
@@ -100,14 +102,15 @@ function onLoad () {
     $('#message1').text('X goes first!')
   }
 }
-onLoad()
 
 function whosTurn () {
   if (activeGame === false) {
 
   } else if (currentPlayer === 'X') {
+    opposingPlayer = 'O'
     $('#message1').text("O's turn")
   } else if (currentPlayer === 'O') {
+    opposingPlayer = 'X'
     $('#message1').text("X's turn")
   }
 }
@@ -116,8 +119,8 @@ const boardClick = function (event) {
   const dataId = event.target.id // targeting my different divs Id's based on click
   const data = event.target // targeting different divs (HTML elements) based on click
 
-  if (gameBoard[dataId] !== '' || !activeGame || currentGameOver === true) { //
-    $('#message1').text('This is an invalid square!')
+  if (gameBoard[dataId] !== '' || !activeGame || currentGameOver === true) {
+    $('#invalid-message').text('This is an invalid square!').toggle(true).fadeOut(3500)
   } else {
     updateGameState(data, dataId)
     gameFinish()
@@ -153,19 +156,18 @@ function gameFinish () { // determines when the game should be over
     if (search1 === search2 && search2 === search3 && search1 !== '') {
       currentGameOver = true
     }
-
+    whosTurn()
     if (currentGameOver === true) { // if this scenario is true
-      $('#message1').text(currentPlayer + ' wins!')
+      $('#message1').text(currentPlayer + ' wins! ' + opposingPlayer + ' loses! Press New Game to play again!')
       activeGame = false // the game is actually over
     }
 
     let currentGameTied = !gameBoard.includes('')
     if (currentGameTied === true && activeGame === true) {
-      $('#message1').text('The Game has been tied! Play again!')
+      $('#message1').text('The Game has been tied! Press New Game to play again!')
       activeGame = false
     }
   }
-  whosTurn()
 }
 
 module.exports = {
