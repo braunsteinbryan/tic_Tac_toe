@@ -69,4 +69,4 @@ and then finish that game.
 ---
 
 #### Wireframe:
-![wireframe](https://ibb.co/NLQF1vs)
+[WireFrame](https://ibb.co/NLQF1vs)
