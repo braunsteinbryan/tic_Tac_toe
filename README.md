@@ -1,5 +1,5 @@
 
-# :octocat: B'S TIC TAC TOE: A Description :octocat:
+# :octocat: BRYAN'S TIC TAC TOE: A Description :octocat:
 
 This application allows the user to be able to complete a list of authenticating
 actions including signing up, signing, in, changing their password, and signing
