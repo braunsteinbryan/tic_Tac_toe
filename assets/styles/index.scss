@@ -1,12 +1,52 @@
 @import '~bootstrap/scss/bootstrap';
 
+#welcome-message {
+  display: flex;
+  justify-content: center;
+}
+
+.entry-forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.sign-up-form, .sign-in-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#sign-in-email {
+  display: flex;
+}
+
+#sign-in-password {
+  display: flex;
+}
+
+#sign-up-email {
+  display: flex;
+}
+
+#sign-up-password {
+  display: flex;
+}
+
+#sign-up-password_confirmation {
+  display: flex;
+}
+
 .container {
   // Set the board container to take up 100% of the viewport's height
   // in this case that's the height of the browser
   display: flex;
   align-content: center;
   justify-content: center;
-  height: 100vh;
+  height: 450px;
 }
 
 .board {
@@ -14,8 +54,7 @@
   // 100vh - 100% of the viewport height
   // use a method called `calc` to subtract some space around
   // each side
-  max-height: calc(100vh - 100px);
-  min-width: calc(100vh - 100px);
+  width: 30vw;
 
   // Setting margin to auto will make the left/right margins the same size
   // which effectively centers the element.
@@ -31,7 +70,11 @@
   // set the minimum height for each box to be a third of the parent's width
   // (board's height)
   // The calc method will take 100% of the parent's height and divide it by 3
-  min-height: calc(100% / 3);
+  width: 150px;
+  overflow: visible;
+  height: 150px;
+  
+  // calc(100% / 3);
 
   // Set each box to have `display` be `flex` so we can center the content
   // (x's and o's) inside of the boxes
@@ -44,7 +87,7 @@
   align-content: center;
 
   // Use `vh` to have the font size change as the viewport height changes as well
-  font-size: 15vh;
+  font-size: 3rem;
 
   // Add a shadow to the x's and o's
   // Place the shadow 2px to the right & 2px below the text
@@ -54,7 +97,7 @@
   // Prevent the user from being able to select the x or o text
   user-select: none;
 
-  // we want to have boarders on the right of each box and the bottom of each box
+  // we want to have borders on the right of each box and the bottom of each box
   border-right: 3px solid black;
   border-bottom: 3px solid black;
 
