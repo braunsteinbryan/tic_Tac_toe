@@ -15,15 +15,17 @@ const onSignUpFailure = function (error) {
 
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('Thanks for signing in ' + response.user.email + ' !')
+  $('#message').text('Thanks for signing in ' + response.user.email + '!')
   $('#sign-in-form').trigger('reset')
   $('#welcome-message').text('Click on New Game to start playing!')
   $('#new-game').show()
   $('#get-games').show()
   $('#change-password-form').show()
-  $('#sign-up-form').hide()
-  $('#sign-in-form').hide()
+  $('.entry-forms').detach()
+  $('.sign-in-form').detach()
+  $('.sign-up-form').detach()
   $('#sign-out-link').show()
+  $('#welcome-message').css("margin-top","0")
 }
 
 const onSignInFailure = function (error) {
@@ -58,7 +60,7 @@ const onSignOutFailure = function (error) {
 const onNewGameSuccess = function (response) {
   store.id = response.game._id
   $('.box').html('')
-  $('#welcome-message').text("BRYAN'S GAME OF TIC TAC TOE")
+  $('#welcome-message').html("Tic Tac Toe <br /> Made by Bryan")
   $('#message').text('You have successfuly started a new game!')
   $('#change-password-form').trigger('reset')
   $('#game-details').show()

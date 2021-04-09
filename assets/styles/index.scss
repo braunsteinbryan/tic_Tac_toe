@@ -1,6 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
 
-#welcome-message {
+body {
+  color: #fefdfa;
+  background-color: #ce2d46;
+  // #00ddfb
+}
+
+.new-game {
+  display: flex;
+  justify-content: center;
+}
+
+h1#welcome-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+  font-family: 'Yellowtail', cursive;
+  text-shadow: 3px 3px black;
+  // #558ABB
+}
+
+#message, #get-games-message, .game-info-message {
+  display: flex;
+  justify-content: center;
+  font-family: 'Kalam', cursive;
+  font-size: 20px;
+}
+
+.game-info-message {
   display: flex;
   justify-content: center;
 }
@@ -12,12 +39,13 @@
   margin: 10px;
 }
 
-.sign-up-form, .sign-in-form {
+.sign-up-form, .sign-in-form, .change-password-form {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
   padding: 10px;
+  color: black;
 }
 
 #sign-in-email {
@@ -38,6 +66,52 @@
 
 #sign-up-password_confirmation {
   display: flex;
+}
+
+#old-password {
+  display: flex;
+}
+
+#new-password {
+  display: flex;
+}
+
+.sign-out-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 190px; 
+  font-family: 'Yellowtail', cursive;
+  font-size: 30px;
+  text-shadow: 3px 3px black;
+}
+
+a {
+  color: #fefdfa;
+  text-decoration: none;
+
+  &:hover {
+    color: #9dabbb;
+    text-decoration: none;
+  }
+}
+
+.sign-up-wrapper, .sign-in-wrapper, .change-password-wrapper {
+  z-index: 1;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 7%;
+  margin: 10px;
+  box-shadow: 1px 1px black;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
+}
+
+.view-played-games {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .container {

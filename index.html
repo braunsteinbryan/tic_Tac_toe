@@ -6,6 +6,8 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Yellowtail&display=swap" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -13,13 +15,15 @@
     </head>
     <body>
 
+        <div>
       <h1 id="welcome-message">To play Tic Tac Toe, Please sign up or sign in!</h1>
-      <p id="message"></p>
-
-    <section class="entry-forms"> 
-    <section class="sign-up-form">
-      <form id="sign-up-form">
-        <fieldset>
+        </div>
+      
+        <section class="entry-forms">
+          <div class="sign-up-wrapper">
+            <section class="sign-up-form">
+          <form id="sign-up-form">
+          <fieldset>
           <legend>Sign up!</legend>
 
           <label for="sign-up-email">Email</label>
@@ -35,9 +39,9 @@
         </fieldset>
       </form>
     </section>
+    </div>
 
-
-
+    <div class="sign-in-wrapper">
     <section class="sign-in-form">
       <form id="sign-in-form">
         <fieldset>
@@ -53,14 +57,16 @@
         </fieldset>
       </form>
     </section>
+  </div>
     </section>
 
-
-    <section>
+    <!-- <div class="logged-in-user-options"> -->
+      <section class="new-game">
       <button id="new-game" type="button">New Game!</button>
-   </section>
+    </section>
 
-    <section>
+   <div class="change-password-wrapper">
+   <section class="change-password-form">
     <form id="change-password-form">
       <fieldset>
         <legend>Change Password!</legend>
@@ -76,18 +82,21 @@
     </fieldset>
     </form>
   </section>
+</div>
 
 
-  <section>
-
+  <section class="sign-out-link">
     <a href="#" id="sign-out-link">Sign Out!</a>
+  </section>
+<!-- </div> -->
+<p id="message"></p>
 
-</section>
-
+<section class="game-info-message">
 <h3 id="message1"></h3>
 <h3 id="invalid-message"></h3>
-<section id="game-details">
+</section>
 
+<section id="game-details">
   <div class="container">
     <div class="row board">
     <div class="col-4 box" id='0'></div>
@@ -102,7 +111,10 @@
 </div>
 </div>
 </section>
+
+<section class="view-played-games">
 <h5 id="get-games-message"></h5>
 <button id="get-games" type="button">View Played Games</button>
+</section>
     </body>
 </html>
