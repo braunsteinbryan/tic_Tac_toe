@@ -20,7 +20,7 @@ h1#welcome-message {
   // #558ABB
 }
 
-#message, #get-games-message, .game-info-message {
+#message, #get-games-message {
   display: flex;
   justify-content: center;
   font-family: 'Kalam', cursive;
@@ -30,6 +30,10 @@ h1#welcome-message {
 .game-info-message {
   display: flex;
   justify-content: center;
+  font-family: 'Kalam', cursive;
+  font-size: 20px;
+  // margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .entry-forms {
@@ -111,7 +115,7 @@ input[type="submit"] {
 .view-played-games {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top:80px;
 }
 
 .container {
@@ -121,6 +125,7 @@ input[type="submit"] {
   align-content: center;
   justify-content: center;
   height: 450px;
+  margin-top: 40px;
 }
 
 .board {
@@ -133,14 +138,13 @@ input[type="submit"] {
   // Setting margin to auto will make the left/right margins the same size
   // which effectively centers the element.
   margin: auto;
-
   // Add cat background to board:
   // background: url('public/cat.jpg') no-repeat center center;
   // background-size: cover;
 }
 
 .box {
-  background: white;
+  background: #ce2d46;
   // set the minimum height for each box to be a third of the parent's width
   // (board's height)
   // The calc method will take 100% of the parent's height and divide it by 3
@@ -159,6 +163,9 @@ input[type="submit"] {
 
   // Center the content along the cross-axis (top-to-bottom because the cross-axis is perpendicular to the main-axis)
   align-content: center;
+  align-items: center;
+
+  font-family: 'Kalam', cursive;
 
   // Use `vh` to have the font size change as the viewport height changes as well
   font-size: 3rem;
@@ -201,7 +208,7 @@ input[type="submit"] {
 
   // Add some color when we hover on a box:
   &:hover {
-    background-color: LightSteelBlue;
+    background-color: #00ddfb;
     cursor: pointer;
   }
 }

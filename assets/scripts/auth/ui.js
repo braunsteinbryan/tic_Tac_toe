@@ -21,9 +21,9 @@ const onSignInSuccess = function (response) {
   $('#new-game').show()
   $('#get-games').show()
   $('#change-password-form').show()
-  $('.entry-forms').detach()
-  $('.sign-in-form').detach()
-  $('.sign-up-form').detach()
+  $('.entry-forms').hide()
+  $('.sign-in-form').hide()
+  $('.sign-up-form').hide()
   $('#sign-out-link').show()
   $('#welcome-message').css("margin-top","0")
 }
@@ -43,14 +43,16 @@ const onChangePasswordFailure = function (error) {
 
 const onSignOutSuccess = function () {
   $('#welcome-message').text('You have been successfully signed out!')
-  $('#sign-in-form').show()
+  $('.sign-in-form').show()
   $('#change-password-form').hide()
   $('#sign-out-link').hide()
   $('#new-game').hide()
   $('#get-games').hide()
-  $('#sign-up-form').show()
+  $('.sign-up-form').show()
   $('#message').hide()
   $('#game-details').hide()
+  $('.game-info-message').hide()
+  $('.entry-forms').show()
 }
 
 const onSignOutFailure = function (error) {
