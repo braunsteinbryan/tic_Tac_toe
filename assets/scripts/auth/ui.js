@@ -27,6 +27,9 @@ const onSignInSuccess = function (response) {
   $('.sign-up-form').hide()
   $('#sign-out-link').show()
   $('#welcome-message').css("margin-top","0")
+  $('.game-info-message').show()
+  $('.box').html('')
+  $('#message1').html('')
 }
 
 const onSignInFailure = function (error) {
