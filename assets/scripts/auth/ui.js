@@ -6,6 +6,7 @@ const onSignUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email + ' !')
   $('#sign-up-form').trigger('reset')
   $('#sign-up-form').hide()
+  $('.sign-up-wrapper').hide()
   $('#welcome-message').text('To play Tic Tac Toe, Please sign in!')
 }
 
