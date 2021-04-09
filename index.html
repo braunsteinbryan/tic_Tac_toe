@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe made by Bryan</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Game Client App" />
+      <meta name="title" property="og:title" content="Game Client" />
+      <meta property="og:type" content="Website" />
+      <meta 
+        name="image" 
+        property="og:image" 
+        content="https://i.imgur.com/1CNiqUH.png" />
+      <meta 
+        name="description" 
+        property="og:description" 
+        content="Game Client App" />
+      <meta name="author" content="Bryan Braunstein" />
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Yellowtail&display=swap" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+        <div>
+      <h1 id="welcome-message">To play Tic Tac Toe, Please sign up or sign in!</h1>
+        </div>
+      
+        <section class="entry-forms">
+          <div class="sign-up-wrapper">
+            <section class="sign-up-form">
+          <form id="sign-up-form">
+          <fieldset>
+          <legend>Sign up!</legend>
+
+          <label for="sign-up-email">Email</label>
+          <input id="sign-up-email" name="credentials[email]" type="email" placeholder="Email">
+
+          <label for="sign-up-password">Password</label>
+          <input id="sign-up-password" name="credentials[password]" type="password" placeholder="Password">
+
+          <label for="sign-up-password_confirmation">Password Confirmation</label>
+          <input id="sign-up-password_confirmation" name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+
+          <input type="submit" value="Sign up">
+        </fieldset>
+      </form>
+    </section>
+    </div>
+
+    <div class="sign-in-wrapper">
+    <section class="sign-in-form">
+      <form id="sign-in-form">
+        <fieldset>
+          <legend>Sign in!</legend>
+
+          <label for="sign-in-email">Email</label>
+          <input id="sign-in-email" name="credentials[email]" type="email" placeholder="Email">
+
+          <label for="sign-in-password">Password</label>
+          <input id="sign-in-password" name="credentials[password]" type="password" placeholder="Password">
+
+          <input type="submit" value="Sign In">
+        </fieldset>
+      </form>
+    </section>
+  </div>
+    </section>
+
+    <!-- <div class="logged-in-user-options"> -->
+      <section class="new-game">
+      <button id="new-game" type="button">New Game!</button>
+    </section>
+
+   <div class="change-password-wrapper">
+   <section class="change-password-form">
+    <form id="change-password-form">
+      <fieldset>
+        <legend>Change Password!</legend>
+
+      <label for="old-password">Old Password</label>
+      <input id="old-password" name="passwords[old]" type="password" placeholder="Old Password">
+
+      <label for="new-password">New Password</label>
+      <input id="new-password" name="passwords[new]" type="password" placeholder="New Password">
+
+
+      <input type="submit" value="Change Password">
+    </fieldset>
+    </form>
+  </section>
+</div>
+
+
+  <section class="sign-out-link">
+    <a href="#" id="sign-out-link">Sign Out!</a>
+  </section>
+<!-- </div> -->
+<p id="message"></p>
+
+<section class="game-info-message">
+<h3 id="message1"></h3>
+<h3 id="invalid-message"></h3>
+</section>
+
+<section id="game-details">
+  <div class="container">
+    <div class="row board">
+    <div class="col-4 box" id='0'></div>
+    <div class="col-4 box" id='1'></div>
+    <div class="col-4 box" id='2'></div>
+    <div class="col-4 box" id='3'></div>
+    <div class="col-4 box" id='4'></div>
+    <div class="col-4 box" id='5'></div>
+    <div class="col-4 box" id='6'></div>
+    <div class="col-4 box" id='7'></div>
+    <div class="col-4 box" id='8'></div>
+</div>
+</div>
+</section>
+
+<section class="view-played-games">
+<h5 id="get-games-message"></h5>
+<button id="get-games" type="button">View Played Games</button>
+</section>
+    </body>
+</html>
